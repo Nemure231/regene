@@ -524,7 +524,7 @@
                         </div>
 
                         <div class="contact-details"
-                            x-data="{ name: $persist(`Your Name`), role: 'Your Role/Job', email: $persist(`youremail@example.com`), mailto: 'mailto:', phone: `00000000000`, tel: 'tel://' }">
+                            x-data="{ name: $persist(`Your Name`), role: $persist('Your Role/Job'), email: $persist(`youremail@example.com`), mailto: 'mailto:', phone: $persist(`00000000000`), tel: 'tel://' }">
                             <div class="name-and-profession">
                                 <h3 class="text-bolder name print-only" x-text="name" id="hidee" itemprop="name"></h3>
                                 <h3 class="hide-print"><input class="editable hide-print name text-bolder" type="text"
