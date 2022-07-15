@@ -521,7 +521,6 @@
                                     </label>
                                 </div>
                             </div>
-
                         </div>
 
                         <div class="contact-details"
@@ -540,8 +539,6 @@
                                 <span class="info print-only">
                                     <a x-text="email" :href="mailto + email" class="link-disguise" itemprop="email"
                                         target="_blank"></a>
-
-
                                 </span>
                                 <span class="info hide-print">
                                     <input class="link-disguise editable" type="" x-model="email">
@@ -576,6 +573,8 @@
                             </div>
                         </div>
 
+                      
+
                         <div class="social-links print-only">
                             <template x-for="(soc, index) in socials" :key="index">
                                 <a class="social-link icon print-only" :href="soc.url" target="_blank"
@@ -585,9 +584,10 @@
                             </template>
                         </div>
 
+                        
+
 
                         <div class="social-links hide-print">
-
                             <div>
                                 <div
                                     style="border-radius: 0px; border: none; background-color: white; display: flex; justify-content: center; width: 100%;">
@@ -612,6 +612,10 @@
                                 </template>
 
                             </div>
+                        </div>
+                        <div class="hide-print" style="margin-top: 30px;">
+                            The icon code like "ri:twitter-fill" can get from
+                            <a href="https://icones.js.org/">Here</a>
                         </div>
                     </div>
                 </div>
