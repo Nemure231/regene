@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en" class="htmls">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Simple resume generator" />
+    <meta name="keywords" content="resume, cv" />
+    <meta name="author" content="Krol.Y" />
+    <meta name="theme-color" content="#1f1f1f" />
+
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta property="og:site_name" content="Resume">
+    <meta property="og:title" content="Resume" />
+    <meta property="og:url" content="https://nemure231.github.io/resume/" />
+    <meta property="og:description" content="Simple resume generator" />
+    <meta property="og:image" content="./logo.png" />
+    <meta property="og:image:alt" content="Resume">
+
+    <link rel="icon" href="./logo.png" type="image/jpg">
+    <title>Résumé</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iconify/2.2.1/iconify.min.js" integrity="sha512-sU5Gzc108d8ERAXEUoNh3DZQ3GZCQyygVkeuhIxFR+D9Go8kLw3Ce3HVD/AI5cnhGzW7Km9V4oOOiepKcD0vlg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC|Nunito+Sans:400,700&display=swap" rel="stylesheet">
+    <style>
+        .clear-margin {
+            margin: 0;
+        }
+
+        .space-top {
+            margin-top: 10px;
+        }
+
+        .space-right {
+            margin-right: 10px;
+        }
+
+        .icon-left {
+            margin-right: 5px;
+        }
+
+        .icon-right {
+            margin-left: 5px;
+        }
+
+        .labels {
+            word-spacing: 5px;
+            line-height: 2;
+        }
+
+        .label-keyword {
+            display: inline-block;
+            background: #7eb0db;
+            color: white;
+            font-size: 0.9em;
+            padding: 5px;
+            border: 1px solid #357ebd;
+        }
+
+        .link-disguise {
+            color: inherit;
+        }
+
+        .link-disguise:hover {
+            color: inherit;
+        }
+
+        .clear-margin-sm {
+            margin-bottom: 0;
+        }
+
+        body {
+            font-family: 'Nunito Sans', "Helvetica Neue", Helvetica, Arial, 'Noto Sans SC', sans-serif;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .text-bolder {
+            font-weight: bold;
+        }
+
+        .enumeration:last-child:after {
+            content: '' !important;
+        }
+
+        .name-and-profession .name {
+            font-size: 2.8rem;
+            margin-bottom: 0;
+        }
+
+        .name-and-profession .job {
+            margin-bottom: 0.5rem;
+        }
+
+        @media only screen {
+            .container {
+                display: block;
+                /* grid-template-columns: auto 15fr 50fr auto; */
+            }
+
+            /* .container .page {
+                max-width: 50em;
+            } */
+        }
+
+        @media (max-width: 768px) {
+            ul {
+                padding-left: 25px;
+            }
+
+            .container {
+                display: block;
+            }
+
+            .card {
+                padding: 1em !important;
+            }
+
+            .background-details {
+                display: block;
+            }
+
+            .background-details .icon {
+                max-width: inherit;
+                min-width: inherit;
+                text-align: left;
+            }
+
+            .background-details .icon,
+            .background-details .info {
+                display: block;
+                padding: 10px 0;
+            }
+
+            .background-details .title {
+                display: none;
+            }
+
+            .card-nested {
+                padding: 5px 0;
+            }
+        }
+
+        .profile-card {
+            width: 100%;
+            /* text-align: left; */
+            text-align: center;
+        }
+
+        .profile-pic {
+            display: block;
+            padding: 1rem;
+        }
+
+        .profile-pic img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .contact-details .detail {
+            display: block;
+            line-height: 2;
+        }
+
+        .contact-details .detail .icon {
+            padding-right: 7px;
+            color: #888;
+        }
+
+        .contact-details .detail .info {
+            font-size: 0.8em;
+        }
+
+        .social-links {
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            padding: 0 0.6rem;
+            color: inherit;
+            opacity: 0.7;
+        }
+
+        .social-link:hover,
+        .social-link:focus {
+            opacity: 1;
+        }
+
+        .social-link:first-child {
+            padding-left: 0;
+        }
+
+        .social-link:last-child {
+            padding-right: 0;
+        }
+
+        .social-link>* {
+            vertical-align: middle;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:not(.icon) {
+            border-bottom: 1px dashed #0005;
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: none;
+        }
+
+        .background-card h4 {
+            line-height: 1.2;
+            font-size: 1em;
+        }
+
+        .background-card h4 .title {
+            background: black !important;
+            color: white !important;
+            display: inline-block;
+            padding: 2px 12px 0 3px;
+            font-weight: bold;
+        }
+
+        .background-card h4:not(:first-child) {
+            margin-top: 2em;
+        }
+
+        .content {
+            line-height: 1.5;
+        }
+
+        .card {
+            background: white;
+            padding: 2em 3.5em;
+        }
+
+        .card-nested {
+            padding: 0.8rem 0 0.8rem 2rem;
+        }
+
+        .card-nested.relax {
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
+
+        .card-wrapper {
+            padding: 5px;
+        }
+
+        .enumeration:not(:last-child):after {
+            content: ", ";
+        }
+
+        .enumeration:last-child:after {
+            content: ".";
+        }
+
+        .github-stars {
+            opacity: 0.6;
+            font-size: 0.9em;
+        }
+
+        .projects {
+            padding: 1rem 0;
+        }
+
+        .projects .text-muted {
+            margin-bottom: 0.4rem;
+        }
+
+        .projects .icon {
+            margin-right: 2px;
+        }
+
+        .px10 {
+            height: 10px;
+        }
+
+        .skill-table {
+            display: grid;
+            grid-template-columns: max-content auto;
+            grid-gap: 1.5rem 1rem;
+        }
+
+        .skill-table .name {
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .project-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 1rem 1rem;
+        }
+
+        .print-only {
+            display: none;
+        }
+
+        @media only screen and (max-width: 768px) {
+
+            .profile-card,
+            .contact-details,
+            .profile-pic {
+                display: block;
+                text-align: center;
+            }
+
+            .card-nested {
+                padding-left: 0;
+            }
+
+            .project-table {
+                display: block;
+            }
+        }
+
+        .card-skills {
+            position: relative;
+        }
+
+        .skill-info {
+            margin-left: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .quote {
+                font-size: inherit;
+            }
+        }
+
+        @media print {
+            .name-and-profession .name {
+                margin-top: -2rem;
+            }
+
+            .page {
+                margin-top: -4rem;
+            }
+
+            .social-links {
+                margin-top: 0.5rem;
+            }
+
+            body {
+                font-size: 10pt;
+            }
+
+            a[href]:after {
+                content: none !important;
+            }
+
+            .pagebreak {
+                page-break-before: always;
+            }
+
+            .card {
+                border: 0;
+                padding: 0;
+            }
+
+            .text-muted {
+                color: #777 !important;
+            }
+
+            .text-muted * {
+                color: inherit !important;
+            }
+
+            .container {
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .contact-details .detail .icon {
+                color: #888 !important;
+            }
+
+            .labels {
+                display: inline;
+            }
+
+            .skill-info {
+                margin-left: 0;
+            }
+
+            .profile-card {
+                text-align: center;
+            }
+
+            .print-only {
+                display: inherit;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            .project-table {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-gap: 0.8rem 1rem;
+            }
+
+            .highlight {
+                margin-top: -0.3rem;
+            }
+
+            blockquote {
+                font-size: 100%;
+            }
+
+            .card-nested {
+                padding: 0.1rem 0 0.1rem 1rem;
+            }
+
+            .card-nested.relax {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+
+            .skill-table {
+                grid-gap: 0.8rem 0.5rem;
+            }
+
+            .background-card h4:not(:first-child) {
+                margin-top: 1em;
+            }
+
+            #work-projects-group {
+                display: grid;
+                grid-gap: 1rem;
+                grid-template-columns: 2fr 4fr;
+            }
+        }
+    </style>
+    <style>
+        .editable {
+            outline: none;
+            border: none;
+            text-align: center;
+            width: 100%;
+        }
+
+        .editable-left {
+            outline: none;
+            border: none;
+            text-align: left;
+        }
+
+        #print{
+            background-color: white;
+            border: none;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        }
+
+
+    </style>
+    <script defer src="https://unpkg.com/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body id="area-1" itemscope itemtype="http://schema.org/Person">
+    <button id="print" class="hide-print">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--material-symbols" width="50" height="50" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="#4e0bcb" d="M6 7V3h12v4Zm12 5.5q.425 0 .712-.288q.288-.287.288-.712t-.288-.713Q18.425 10.5 18 10.5t-.712.287Q17 11.075 17 11.5t.288.712q.287.288.712.288ZM8 19h8v-4H8Zm-2 2v-4H2v-6q0-1.275.875-2.137Q3.75 8 5 8h14q1.275 0 2.138.863Q22 9.725 22 11v6h-4v4Z"></path></svg>
+    </button>
+    <div id="en" class="container">
+        <section class="row">
+            <div class="card-wrapper">
+                <div class="card">
+                    <div class="profile-card" x-data="{socials: $persist([
+                        {
+                            icon: 'ri:linkedin-box-fill',
+                            url: 'https://www.linkedin.com/',
+                        },
+                        {
+                            icon: 'ri:twitter-fill',
+                            url: 'https://twitter.com/'
+                        },
+                        {
+                            icon: 'ri:facebook-circle-fill',
+                            url: 'https://facebook.com/'
+                        }
+                    ])}">
+                        <div x-data="img">
+                            <div class="profile-pic"  x-data="{ name: $persist(`Your Name`)}">
+                                <template x-if="file">
+                                    <img class="media-object center-block"
+                                        style="object-fit: cover; object-position: center; border-radius: 9999px;"
+                                        :alt="name" :src="file" itemprop="image">
+                                </template>
+                                <p class="print-only"></p>
+                            </div>
+                            <div class="hide-print">
+                                <div style="display: flex; justify-content: center;">
+                                    <input class="hide-print" @change="loadImage($event)" type="file" id="profile"
+                                        accept="image/*" style="display: none;">
+                                    <label for="profile" style="cursor: pointer;">
+                                        Choose Image
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="contact-details"
+                            x-data="{ name: $persist(`Your Name`), role: 'Your Role/Job', email: $persist(`youremail@example.com`), mailto: 'mailto:', phone: `00000000000`, tel: 'tel://' }">
+                            <div class="name-and-profession">
+                                <h3 class="text-bolder name print-only" x-text="name" id="hidee" itemprop="name"></h3>
+                                <h3 class="hide-print"><input class="editable hide-print name text-bolder" type="text"
+                                        x-model="name" /></h3>
+                                <div class="text-muted job editable print-only" x-text="role" itemprop="jobTitle"
+                                    contenteditable="true"></div>
+                                <div class="text-muted job hide-print">
+                                    <input class="editable hide-print" x-model="role" type="text" x-model="role">
+                                </div>
+                            </div>
+                            <div style="display: inline;" class="detail">
+                                <span class="info print-only">
+                                    <a x-text="email" :href="mailto + email" class="link-disguise" itemprop="email"
+                                        target="_blank"></a>
+
+
+                                </span>
+                                <span class="info hide-print">
+                                    <input class="link-disguise editable" type="" x-model="email">
+                                </span>
+                            </div>
+
+                            <template x-if="email">
+                                <template x-if="phone">
+                                    <div style="margin-right: 3px; margin-left: 3px; display: inline;">
+                                        <div class="print-only">|</div>
+                                    </div>
+                                </template>
+                            </template>
+                            <template x-if="!email">
+                                <template x-if="!phone">
+                                </template>
+                            </template>
+
+                            <div style="display: inline;" class="detail">
+                                <span class="info print-only">
+                                    <a x-text="phone" :href="tel + phone" class="link-disguise" itemprop="telephone"
+                                        target="_blank"></a>
+                                </span>
+                                <input x-model="phone" class="link-disguise editable hide-print info">
+                            </div>
+
+                            <div class="detail" x-data="{ address: $persist(`Your address`) }">
+                                <span x-text="address" class="info print-only"></span>
+                                <span class="info hide-print">
+                                    <input class="link-disguise editable" type="text" x-model="address">
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="social-links print-only">
+                            <template x-for="(soc, index) in socials" :key="index">
+                                <a class="social-link icon print-only" :href="soc.url" target="_blank"
+                                    style="display: inline;">
+                                    <span class="iconify" :data-icon="soc.icon"></span>
+                                </a>
+                            </template>
+                        </div>
+
+
+                        <div class="social-links hide-print">
+
+                            <div>
+                                <div
+                                    style="border-radius: 0px; border: none; background-color: white; display: flex; justify-content: center; width: 100%;">
+                                    <button
+                                        @click="socials.push({icon: 'Social icon ...', url: 'https://www.social_icon.com/'})"
+                                        style="margin-left: 410px; background-color: white; border: none;">
+                                        <span
+                                            style=" padding-left: 6px; padding-right: 6px; background-color: black; color: white;">
+                                            +
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <template x-for="(soc, index) in socials" :key="index">
+                                    <div class="hide-print" style="margin: 6px;"> <span class="iconify"
+                                            :data-icon="soc.icon"></span>
+                                        <input type="text" x-model="soc.icon" style="outline: none; border: none;">
+                                        <input type="text" x-model="soc.url" style="outline: none; border: none;">
+                                        <button @click="socials.length > 1 && socials.splice(index, 1)"
+                                            style="border-radius: 9999px; border: none; background-color: white;">X</button>
+                                    </div>
+                                </template>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row page">
+
+            <div class="card-wrapper">
+                <div class="card background-card"
+                    x-data="{title_1:  $persist('About'), title_2:  $persist('Projects'), title_3:  $persist('Work Experience'), title_4:  $persist('Skills'), title_5:  $persist('Educations'), title_6:  $persist('Awards'), title_7:  $persist('Languages')}">
+
+                    <h4 id="about" class="print-only"></span> <span class="title" x-text="title_1"></span> </h4>
+                    <h4 id="about" class="hide-print"></span><input class="title editable" x-model="title_1" /> </h4>
+                    <div class="card-nested" itemprop="description"
+                        x-data="{ desc: $persist(`My name is Yourname, a _____ and a _____. My career as a ______ often leads me to come up with much ideas, which I can use to develop my skills. I am very interested and eager to learn more about new things.`) }">
+                        <p x-text="desc" class="print-only"></p>
+                        <textarea rows="4" class="editable hide-print" x-model="desc"
+                            style=" text-align: left;"></textarea>
+                    </div>
+                    <div id="work-projects-group">
+                        <div id="projects" x-data="{projects: $persist([
+                            {
+                                name: 'Project Name 1',
+                                url: 'https://www.link_project.com/',
+                                desc: 'Project description'
+                            },
+                            {
+                                name: 'Project Name 2',
+                                url: 'https://www.link_project.com/',
+                                desc: 'Project description'
+                            }
+                        ]), 
+                            more_projects: $persist({name: 'More Projects ....', url: 'https://www.link_more_project.com/'}),
+                            hide_more_project: $persist(false) }">
+                            <h4 class="print-only" style="margin-bottom: -1px;"></span> <span class="title"
+                                    x-text="title_2"></span> </h4>
+                            <h4 class="hide-print"></span><input class="title editable" x-model="title_2" /> </h4>
+                            <div class="list-unstyled projects">
+                                <div class="project-table print-only">
+                                    <template x-for="(pro, index) in projects" :key="index">
+
+                                        <li class="card-nested">
+                                            <div class="content has-sidebar">
+                                                <p class="clear-margin-sm" itemprop="award">
+                                                    <strong x-text="pro.name"></strong>&nbsp
+
+                                                    <a :href="pro.url" class='icon' target="_blank">
+                                                        <span class="iconify" data-icon="ri:arrow-right-up-line"></span>
+                                                    </a>
+                                                </p>
+                                                <p class="text-muted">
+                                                    <small x-text="pro.desc"></small>
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </template>
+                                </div>
+
+                                <div class="hide-print"
+                                    style="border-radius: 0px; border: none; background-color: white; display: flex; justify-content: end; width: 100%;">
+                                    <button class="hide-print"
+                                        @click="projects.push({name: 'Project name ...', url: 'https://www.link_project.com/', desc: 'Project description'})"
+                                        style="margin-left: 410px; background-color: white; border: none;">
+                                        <span class="hide-print"
+                                            style=" padding-left: 6px; padding-right: 6px; background-color: black; color: white;">
+                                            +
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <div class="project-table hide-print">
+                                    <template x-for="(pro, index) in projects" :key="index">
+                                        <li class="card-nested hide-print">
+                                            <div class="hide-print"
+                                                style="display: flex; justify-content: end; width: 100%;">
+                                                <button class="hide-print"
+                                                    @click="projects.length > 1 && projects.splice(index, 1)"
+                                                    style="border-radius: 9999px; border: none; background-color: white;">X</button>
+                                            </div>
+                                            <input class="editable hide-print" type="text" x-model="pro.name"
+                                                style="text-align: left;">
+                                            <input class="editable hide-print" type="text" x-model="pro.url"
+                                                style="text-align: left;">
+                                            <input class="editable hide-print" type="text" x-model="pro.desc"
+                                                style="text-align: left;">
+                                        </li>
+                                    </template>
+                                </div>
+
+                                <li class="card-nested text-muted">
+                                    <div style="display: inline;">
+                                        <a :style="hide_more_project ? { visibility: 'hidden' } : { visibility: 'visible' }"
+                                            :class="hide_more_project ? 'hide-print' : 'print-only'"
+                                            :href="more_projects.url" x-text="more_projects.name" target="_blank"></a>
+                                    </div>
+
+                                    <div
+                                        :style="hide_more_project ? { visibility: 'hidden' } : { visibility: 'visible' }">
+                                        <input class="editable hide-print" type="text" x-model="more_projects.name"
+                                            style="text-align: left;">
+                                        <input class="editable hide-print" type="text" x-model="more_projects.url"
+                                            style="text-align: left;">
+                                    </div>
+
+                                    <button class="hide-print" @click="hide_more_project =! hide_more_project"
+                                        style="background-color: white; border: none; margin-top: 6px;">
+                                        <span class="hide-print" x-text="hide_more_project ? 'show' : 'hide'"
+                                            style=" padding-left: 6px; padding-right: 6px; background-color: black; color: white;">
+
+                                        </span>
+                                        <small class="hide-print" style="margin-left: 10px;"
+                                            x-text="hide_more_project ? 'if you have more projects' : `if you don't have more projects`">
+
+                                        </small>
+                                    </button>
+                                </li>
+                            </div>
+                        </div>
+
+                        <div id="work-experience" x-data="{
+                            works: $persist([
+                                {
+                                    name: 'Company Name',
+                                    url: 'https://www.link_company.com/',
+                                    loc: 'Location',
+                                    date: 'Nov 2020 - Present',
+                                    role: 'Your role',
+                                    desc_list: [
+                                        {
+                                            desc: 'Describe what you do...',
+                                        },
+                                        {
+                                            desc: 'at your workplace ...',
+                                        },
+                                        {
+                                            desc: 'In list style ...',
+                                        }
+                                    ]
+                                },
+                            ])
+                            }">
+                            <h4 class="print-only" style="margin-bottom: -0.2px;"></span> <span class="title"
+                                    x-text="title_3"></span> </h4>
+                            <h4 class="hide-print"></span><input class="title editable" x-model="title_3" /> </h4>
+                            <ul class="list-unstyled print-only">
+                                <template x-for="(wor, index) in works" :key="index">
+                                    <li class="card-nested relax">
+                                        <div class="content has-sidebar">
+                                            <p class="clear-margin-sm">
+                                                <template x-if="!wor.url">
+                                                    <strong x-text="wor.name"></strong>
+
+                                                </template>
+                                                <template x-if="wor.url">
+                                                    <strong>
+                                                        <a :href="wor.url" x-text="wor.name" target="_blank"></a>
+
+                                                    </strong>
+                                                </template>
+                                                <span x-text="wor.role" class="text-muted"
+                                                    style="margin-left: 0.3em"></span>
+                                            </p>
+                                            <p class="text-muted">
+                                                <small>
+                                                    <span x-text="`${wor.date} | ${wor.loc}`"
+                                                        class="space-right"></span>
+                                                </small>
+                                            </p>
+                                            <ul class='highlight'>
+                                                <template x-for="(dli, inde) in wor.desc_list" :key="inde">
+                                                    <li x-text="dli.desc"></li>
+                                                </template>
+                                            </ul>
+                                        </div>
+
+                                    </li>
+                                </template>
+                            </ul>
+                            <div class="hide-print"
+                                style="border-radius: 0px; border: none; background-color: white; display: flex; justify-content: end; width: 100%;">
+                                <button class="hide-print" @click="push_work(works)"
+                                    style="margin-left: 410px; background-color: white; border: none;">
+                                    <span class="hide-print"
+                                        style=" padding-left: 6px; padding-right: 6px; background-color: black; color: white;">
+                                        +
+                                    </span>
+                                </button>
+                            </div>
+                            <ul class="list-unstyled hide-print">
+                                <template x-for="(wor, index) in works" :key="index">
+                                    <li class="card-nested relax">
+                                        <div class="content has-sidebar">
+
+                                            <p class="clear-margin-sm">
+                                                <strong>
+                                                    <input class="editable-left" type="text" x-model="wor.name">
+
+                                                </strong>
+                                                <button @click="works.length > 1 && works.splice(index, 1)"
+                                                    style=" border-radius: 9999px; border: none; background-color: white;">X</button>
+                                            </p>
+                                            <input class="editable-left" type="text" x-model="wor.role">
+
+                                            <div class="text-muted">
+                                                <small>
+                                                    <input class="editable-left" type="text" x-model="wor.date">
+                                                </small>
+
+                                            </div>
+                                            <small>
+                                                <input class="editable-left" type="text" x-model="wor.loc">
+                                                <button @click="wor.desc_list.push({desc: 'More description ....'})"
+                                                    class="hide-print"
+                                                    style="margin-left: 63px; background-color: white; border: none;">
+                                                    <span class="hide-print"
+                                                        style=" padding-left: 6px; padding-right: 6px; background-color: black; color: white;">
+                                                        +
+                                                    </span>
+                                                </button>
+                                            </small>
+                                            <ul class='highlight'>
+                                                <template x-for="(dli, inde) in wor.desc_list" :key="inde">
+                                                    <li>
+                                                        <input class="editable-left" x-model="dli.desc" />
+                                                        <button
+                                                            @click="wor.desc_list.length > 1 && wor.desc_list.splice(inde, 1)"
+                                                            style=" border-radius: 9999px; border: none; background-color: white;">X</button>
+                                                    </li>
+
+                                                </template>
+                                            </ul>
+                                        </div>
+
+                                    </li>
+
+                                </template>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="force-top">
+
+                        <h4 id="skills" class="print-only"></span> <span class="title" x-text="title_4"></span> </h4>
+                        <h4 id="skills" class="hide-print"></span><input class="title editable" x-model="title_4" />
+                        </h4>
+
+                        <div class="card-nested" itemprop="description" x-data="{skills: $persist([
+                                {
+                                    name: 'Office',
+                                    list: 'Word, Excel, PowerPoint'
+                                },
+                                {
+                                    name: 'Writer',
+                                    list: 'Proofreading, Type-Fast'
+                                },
+                                {
+                                    name: 'Designer',
+                                    list: 'CorelDraw, Figma'
+                                }
+                            
+                                ])}">
+                            <div class="hide-print"
+                                style="border-radius: 0px; border: none; background-color: white; display: flex; justify-content: end; width: 100%;">
+                                <button class="hide-print"
+                                    @click="skills.push({name: 'Skill name', list: 'List, of, your, skill'})"
+                                    style="margin-left: 410px; background-color: white; border: none;">
+                                    <span class="hide-print"
+                                        style=" padding-left: 6px; padding-right: 6px; background-color: black; color: white;">
+                                        +
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="skill-table print-only">
+                                <div style=" display: flex; justify-content: flex-start; margin-left: -8px;">
+                                    <table>
+                                        <template x-for="(ski, index) in skills" :key="index">
+                                            <tr>
+                                                <td style="padding-left: 8px; padding-bottom: 8px;">
+                                                    <div style="font-weight: bold; font-size: 13px;" x-text="ski.name">
+                                                    </div>
+                                                </td>
+                                                <td style="padding-left: 8px; padding-bottom: 8px;">
+                                                    <div style="font-size: 13px;" x-text="ski.list"></div>
+                                                </td>
+                                            </tr>
+                                        </template>
+                                    </table>
+
+                                </div>
+                            </div>
+
+
+                            <template x-for="(ski, index) in skills" :key="index">
+                                <div class="skill-table hide-print">
+                                    <div style="display: inline; margin-bottom: 9px;">
+                                        <input class='name editable-left' x-model="ski.name" style="display: inline;" />
+                                        <input x-model="ski.list" class="editable-left" style="display: inline;" />
+                                    </div>
+                                    <button @click="skills.length > 1 && skills.splice(index, 1)"
+                                        style=" border-radius: 9999px; border: none; background-color: white;">X</button>
+                                </div>
+                        </div>
+
+                        </template>
+
+                        <div id="education" style="margin-left: -10px;" x-data="{educations: $persist([
+                                    {
+                                        fac: 'Facultas',
+                                        title: 'Barchelor of ....',
+                                        place: 'University Name',
+                                        loc: 'Jakarta',
+                                        date: 'Jan 2016 - Nov 2020',
+                                        desc: 'Small description ....'
+                                    }
+                                    
+                                ])}">
+                            <h4 class="print-only"></span><span class="title" x-text="title_5"></span></h4>
+                            <h4 class="hide-print"></span><input class="title editable" x-model="title_5" /></h4>
+                            <div class="hide-print"
+                                style="border-radius: 0px; border: none; background-color: white; display: flex; justify-content: end; width: 100%;">
+                                <button class="hide-print" @click="educations.push( {
+                                            fac: 'Facultas',
+                                            title: 'Barchelor of ....',
+                                            place: 'University Name',
+                                            loc: 'Jakarta',
+                                            date: 'Jan 2016 - Nov 2020',
+                                            desc: 'Small description ....',
+                                        })" style="margin-left: 410px; background-color: white; border: none;">
+                                    <span class="hide-print"
+                                        style=" padding-left: 6px; padding-right: 6px; background-color: black; color: white;">
+                                        +
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="print-only">
+
+                                <ul class="list-unstyled">
+                                    <template x-for="(edu, index) in educations" :key="index">
+                                        <li class="card-nested" style="margin-bottom: 12px;">
+                                            <div class="content has-sidebar">
+                                                <p class="clear-margin-sm" style="display: inline;">
+                                                    <strong style="display: inline;" x-text="edu.fac"></strong>, <strong
+                                                        x-text="edu.title"></strong>,
+                                                <div x-text="edu.place" style="display: inline;"></div>,
+                                                <div x-text="edu.loc" style="display: inline;">
+
+                                                </div>
+                                                </p>
+                                                <p class="text-muted clear-margin-sm" style="margin-top: -8px;">
+                                                    <small x-text="edu.date">
+                                                    </small>
+                                                </p>
+                                                <div x-text="edu.desc"></div>
+                                                <i></i>
+                                                <div class="space-top labels">
+
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    </template>
+                                </ul>
+                            </div>
+                            <ul class="list-unstyled hide-print">
+                                <template x-for="(edu, index) in educations" :key="index">
+                                    <li class="card-nested" style="margin-bottom: 12px;">
+                                        <div style=" display: flex; justify-content: flex-end; margin-right: 5px;">
+                                            <button @click="educations.length > 1 && educations.splice(index, 1)"
+                                                style=" border-radius: 9999px; border: none; background-color: white;">X</button>
+                                        </div>
+                                        <div class="content has-sidebar">
+                                            <p class="clear-margin-sm" style="display: block;">
+                                                <input class="editable-left" x-model="edu.fac" type="text"
+                                                    style="display: block;" />
+                                                <input class="editable-left" x-model="edu.title" type="text"
+                                                    style="display: block;" />
+                                                <input class="editable-left" x-model="edu.place" type="text"
+                                                    style="display: block;" />
+                                                <input class="editable-left" x-model="edu.loc" type="text"
+                                                    style="display: block;" />
+                                            </p>
+                                            <p class="text-muted clear-margin-sm">
+                                                <small>
+                                                    <input class="editable-left" x-model="edu.date" type="text"
+                                                        style="display: block;" />
+                                                </small>
+                                            </p>
+                                            <div>
+                                                <input class="editable-left" x-model="edu.desc" type="text"
+                                                    style="display: block;" />
+                                            </div>
+                                            <i></i>
+                                            <div class="space-top labels">
+
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </template>
+                            </ul>
+                        </div>
+
+
+
+
+                        <div style="margin-left: -10px;" x-data="{awards: $persist([
+                            {
+                                title: 'Awards Title',
+                                place: 'Awards Place',
+                                date: 'Jul 2019',
+                                desc: 'Awards description ....'
+                            },
+                            {
+                                title: 'Awards Title',
+                                place: 'Awards Place',
+                                date: 'Jul 2019',
+                                desc: 'Awards description ....'
+                            }
+                            
+                        ])}">
+                            <h4 id="awards" class="print-only"></span> <span class="title" x-text="title_6"></span>
+                            </h4>
+                            <h4 id="awards" class="hide-print"></span><input class="title editable" x-model="title_6" />
+                            </h4>
+
+                            <div class="hide-print"
+                                style="border-radius: 0px; border: none; background-color: white; display: flex; justify-content: end; width: 100%;">
+                                <button class="hide-print" @click="awards.push(  {
+                                        title: 'Awards Title',
+                                        place: 'Awards Place',
+                                        date: 'Jul 2019',
+                                        desc: 'Awards description ....',
+                                        })" style="margin-left: 410px; background-color: white; border: none;">
+                                    <span class="hide-print"
+                                        style=" padding-left: 6px; padding-right: 6px; background-color: black; color: white;">
+                                        +
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="print-only">
+                                <ul class="list-unstyled" style="display: flex; column-gap: 50px;">
+                                    <template x-for="(awa, index) in awards" :key="index">
+
+                                        <li class="card-nested">
+
+                                            <div class="content has-sidebar">
+                                                <p class="clear-margin-sm" style="display: inline;" itemprop="award">
+                                                    <strong x-text="awa.title" style="display: inline;"></strong>,&nbsp;
+                                                <div style="display: inline;" x-text="awa.place">
+                                                </div>
+                                                </p>
+                                                <p class="text-muted clear-margin-sm" style="margin-top: -8px;">
+                                                    <small x-text="awa.date"></small>
+                                                </p>
+                                                <p x-text="awa.desc">
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </template>
+                                </ul>
+
+                            </div>
+
+                            <ul class="list-unstyled hide-print">
+                                <template x-for="(awa, index) in awards" :key="index">
+                                    <li class="card-nested">
+                                        <div style=" display: flex; justify-content: flex-end; margin-right: 5px;">
+                                            <button @click="awards.length > 1 && awards.splice(index, 1)"
+                                                style=" border-radius: 9999px; border: none; background-color: white;">
+                                                X
+                                            </button>
+                                        </div>
+                                        <div class="content has-sidebar">
+                                            <input class="editable-left" x-model="awa.title" type="text"
+                                                style="display: block;" />
+                                            <input class="editable-left" x-model="awa.place" type="text"
+                                                style="display: block;" />
+                                            <input class="editable-left" x-model="awa.date" type="text"
+                                                style="display: block;" />
+                                            <input class="editable-left" x-model="awa.desc" type="text"
+                                                style="display: block;" />
+                                        </div>
+                                    </li>
+                                </template>
+                            </ul>
+
+                        </div>
+                        <div style="margin-left: -10px;" x-data="{languages: $persist([
+                            {
+                                name: 'Indonesia',
+                                level: 'Native Speaker',
+                            
+                            },
+                            
+                            ])}">
+                            <h4 id="languages" class="print-only"></span> <span class="title" x-text="title_7"></span>
+                            </h4>
+                            <h4 id="languages" class="hide-print"></span><input class="title editable"
+                                    x-model="title_7" /></h4>
+                            <div class="hide-print"
+                                style="border-radius: 0px; border: none; background-color: white; display: flex; justify-content: end; width: 100%;">
+                                <button class="hide-print" @click="languages.push(  {
+                                        name: 'Another Languages',
+                                        level: `Level Languages`,
+                                    
+                                        })" style="margin-left: 410px; background-color: white; border: none;">
+                                    <span class="hide-print"
+                                        style=" padding-left: 6px; padding-right: 6px; background-color: black; color: white;">
+                                        +
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="print-only">
+                                <p class="card-nested" style="display: inline;">
+                                    <template x-for="(lang, index) in languages" :key="index">
+                                        <span style="display: inline;">
+                                            <strong x-text="lang.name" style="display: inline;"></strong>
+                                            <div class="enumeration print-only" x-text="`(${lang.level})`"
+                                                style="display: inline;"></div>
+                                        </span>
+                                    </template>
+                                </p>
+
+                            </div>
+                            <div class="hide-print">
+                                <p class="card-nested" style="display: inline;">
+                                    <template x-for="(lang, index) in languages" :key="index">
+
+                                        <span>
+                                            <div style=" display: flex; justify-content: flex-end; margin-right: 5px;">
+                                                <button @click="languages.length > 1 && languages.splice(index, 1)"
+                                                    style="color: black; border-radius: 9999px; border: none; background-color: white;">
+                                                    X
+                                                </button>
+                                            </div>
+                                            <input class="editable-left hide-print" x-model="lang.name" type="text"
+                                                style="display: block;" />
+                                            <input class="editable-left hide-print" x-model="lang.level" type="text"
+                                                style="display: block;" />
+                                        </span>
+                                    </template>
+                                </p>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+<script>
+
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('img', () => ({
+            file: '',
+
+            loadImage(event) {
+                const { files } = event.target;
+                if (files && files[0]) {
+                    const fileType = files[0]['type'];
+                    const fileSize = files[0]['size'];
+                    const validImageTypes = ['image/jpeg', 'image/png'];
+                    if (!validImageTypes.includes(fileType)) {
+                        alert('Please, choose the right format image! The avaiable format is JPG, JPEG, and PNG!');
+                    }
+                    else if (fileSize >= 1045301) {
+                        alert('The maximum size image to upload is 1MB, please reduce your image size before upload again!');
+                    } else {
+
+                        const blob = URL.createObjectURL(files[0]);
+
+
+                        const reader = new FileReader();
+                        reader.onloadend = (e) => {
+
+                            this.file = reader.result
+            
+
+                        };
+                        reader.readAsDataURL(files[0]);
+                    }
+                }
+            }
+        }))
+    })
+
+    let loadImage = async (event) => {
+        const { files } = event.target;
+
+
+
+        if (files && files[0]) {
+            const fileType = files[0]['type'];
+            const fileSize = files[0]['size'];
+            const validImageTypes = ['image/jpeg', 'image/png'];
+            if (!validImageTypes.includes(fileType)) {
+                alert('Please, choose the right format image! The avaiable format is JPG, JPEG, and PNG!');
+            }
+            else if (fileSize >= 1045301) {
+                alert('The maximum size image to upload is 1MB, please reduce your image size before upload again!');
+            } else {
+
+                const blob = URL.createObjectURL(files[0]);
+
+                console.log(this.img)
+
+                const reader = new FileReader();
+                reader.onloadend = (e) => {
+
+                    // event_image = reader.result
+    
+
+                };
+                reader.readAsDataURL(files[0]);
+            }
+        }
+    }
+
+    var click = document.getElementById('print')
+    click.addEventListener("click", function () {
+        let printContents, popupWin;
+        printContents = document.getElementById('area-1').innerHTML;
+        popupWin = window.open('', '_blank', 'height=500, width=500');
+        popupWin.document.close();
+        popupWin.document.write(`<html><head> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" crossorigin="anonymous"> </head> <style>@page{size: A4; margin:38.4px } .clear-margin { margin: 0; } .space-top { margin-top: 10px; } .space-right { margin-right: 10px; } .icon-left { margin-right: 5px; } .icon-right { margin-left: 5px; } .labels { word-spacing: 5px; line-height: 2; } .label-keyword { display: inline-block; background: #7eb0db; color: white; font-size: 0.9em; padding: 5px; border: 1px solid #357ebd; } .link-disguise { color: inherit; } .link-disguise:hover { color: inherit; } .clear-margin-sm { margin-bottom: 0; } body { font-family: 'Nunito Sans', "Helvetica Neue", Helvetica, Arial, 'Noto Sans SC', sans-serif; color: #333; font-size: 16px; } .text-bolder { font-weight: bold; } .enumeration:last-child:after { content: '' !important; } .name-and-profession .name { font-size: 2.8rem; margin-bottom: 0; } .name-and-profession .job { margin-bottom: 0.5rem; } @media only screen { .container { display: grid; grid-template-columns: auto 15fr 50fr auto; } .container .page { max-width: 50em; } } @media (max-width: 768px) { ul { padding-left: 25px; } .container { display: block; } .card { padding: 1em !important; } .background-details { display: block; } .background-details .icon { max-width: inherit; min-width: inherit; text-align: left; } .background-details .icon, .background-details .info { display: block; padding: 10px 0; } .background-details .title { display: none; } .card-nested { padding: 5px 0; } } .profile-card { width: 100%; text-align: left; } .profile-pic { display: block; padding: 1rem; } .profile-pic img { width: 100px; height: 100px; } .contact-details .detail { display: block; line-height: 2; } .contact-details .detail .icon { padding-right: 7px; color: #888; } .contact-details .detail .info { font-size: 0.8em; } .social-links { margin-top: 1.5rem; } .social-link { padding: 0 0.6rem; color: inherit; opacity: 0.7; } .social-link:hover, .social-link:focus { opacity: 1; } .social-link:first-child { padding-left: 0; } .social-link:last-child { padding-right: 0; } .social-link > * { vertical-align: middle; } a { color: inherit; text-decoration: none; } a:not(.icon) { border-bottom: 1px dashed #0005; } a:hover, a:focus { text-decoration: none; } .background-card h4 { line-height: 1.2; font-size: 1em; } .background-card h4 .title { background: black !important; color: white !important; display: inline-block; padding: 2px 12px 0 3px; font-weight: bold; } .background-card h4:not(:first-child) { margin-top: 2em; } .content { line-height: 1.5; } .card { background: white; padding: 2em 3.5em; } .card-nested { padding: 0.8rem 0 0.8rem 2rem; } .card-nested.relax { padding-top: 1.5rem; padding-bottom: 1.5rem; } .card-wrapper { padding: 5px; } .enumeration:not(:last-child):after { content: ", "; } .enumeration:last-child:after { content: "."; } .github-stars { opacity: 0.6; font-size: 0.9em; } .projects { padding: 1rem 0; } .projects .text-muted { margin-bottom: 0.4rem; } .projects .icon { margin-right: 2px; } .px10 { height: 10px; } .skill-table { display: grid; grid-template-columns: max-content auto; grid-gap: 1.5rem 1rem; } .skill-table .name { font-weight: bold; text-align: right; } .project-table { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 1rem 1rem; } .print-only { display: none; } @media only screen and (max-width: 768px) { .profile-card, .contact-details, .profile-pic { display: block; text-align: center; } .card-nested { padding-left: 0; } .project-table { display: block; } } .card-skills { position: relative; } .skill-info { margin-left: 20px; } @media (max-width: 768px) { .quote { font-size: inherit; } } @media print { .hide-print{display:none;} .name-and-profession .name { margin-top: -2rem; } .page { margin-top: -4rem; } .social-links { margin-top: 0.5rem; } body { font-size: 10pt; } a[href]:after { content: none !important; } .pagebreak { page-break-before: always; } .card { border: 0; padding: 0; } .text-muted { color: #777 !important; } .text-muted * { color: inherit !important; } .container { max-width: 100%; width: 100%; } .contact-details .detail .icon { color: #888 !important; } .labels { display: inline; } .skill-info { margin-left: 0; } .profile-card { text-align: center; } .print-only { display: inherit; } .no-print { display: none; } .project-table { display: grid; grid-template-columns: 1fr; grid-gap: 0.8rem 1rem; } .highlight { margin-top: -0.3rem; } blockquote { font-size: 100%; } .card-nested { padding: 0.1rem 0 0.1rem 1rem; } .card-nested.relax { padding-top: 1rem; padding-bottom: 1rem; } .skill-table { grid-gap: 0.8rem 0.5rem; } .background-card h4:not(:first-child) { margin-top: 1em; } #work-projects-group { display: grid; grid-gap: 1rem; grid-template-columns: 2fr 4fr; } } </style> <body onload="window.print();">${printContents}</body> </html>`);
+        popupWin.document.close();
+    });
+</script>
+
+</html>
